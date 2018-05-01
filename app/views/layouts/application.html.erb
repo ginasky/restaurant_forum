@@ -9,6 +9,16 @@
   </head>
 
   <body>
+    <p class="notice"><%=notice%></p>
+    <p claee="alert"><%=alert%></p>
+    <% if current_user %>
+      Hi, <%=current_user.email%>
+      <%=link_to("logout",destroy_user_session_path, method: :delete) %>|
+      <%=link_to("modify password",edit_user_registration_path) %>
+    <%else%>
+      <%=link_to("sign up",new_user_registration_path) %>
+      <%=link_to("log in",new_user_session_path)%>
+    <%end%>
     <%= yield %>
   </body>
 </html>
