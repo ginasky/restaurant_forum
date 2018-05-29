@@ -1,14 +1,29 @@
-<h1>"restaurant admin"</hr>
-<ul>
-  <% @restaurants.each do |restaurant| %>
-  <li>
-    <%= restaurant.name %>
-    <%= link_to "Show", admin_restaurant_path(restaurant) %>
-    <%= link_to "Edit", edit_admin_restaurant_path(restaurant) %>
-    <%= link_to "Delete", admin_restaurant_path(restaurant), method: :delete,data:{confirm:"Are you sure"}%>
 
-  </li>
-  <% end %>
-</ul>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>restaurant ID</th>
+        <th>Restaurant name</th>
+        <th>More detail</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @restaurants.each do |restaurant| %>
+      <tr>
+        <th><%= restaurant.id %></th>
+        <th><%= restaurant.name %></th>
+        <th><%= link_to "Show", admin_restaurant_path(restaurant) %></th>
+        <th><%= link_to "Edit", edit_admin_restaurant_path(restaurant) %></th>
+        <th><%= link_to "Delete", admin_restaurant_path(restaurant),
+            method: :delete,data:{confirm:"Are you sure"}%></th>
+        <% end %>
+
+      </tr>
+    </tbody>
+
+  </table>
+
+<p><%= link_to "New_restaurant", new_admin_restaurant_path %></p>
 <%= paginate @restaurants %>
-<%= link_to "New_restaurant", new_admin_restaurant_path %>
