@@ -1,12 +1,10 @@
-
+<div class="container">
   <table class="table">
     <thead>
       <tr>
-        <th>restaurant ID</th>
+        <th>Restaurant ID</th>
         <th>Restaurant name</th>
         <th>More detail</th>
-        <th>Edit</th>
-        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -14,10 +12,12 @@
       <tr>
         <th><%= restaurant.id %></th>
         <th><%= restaurant.name %></th>
-        <th><%= link_to "Show", admin_restaurant_path(restaurant) %></th>
-        <th><%= link_to "Edit", edit_admin_restaurant_path(restaurant) %></th>
-        <th><%= link_to "Delete", admin_restaurant_path(restaurant),
-            method: :delete,data:{confirm:"Are you sure"}%></th>
+        <th><%= link_to "Show", admin_restaurant_path(restaurant) %>
+          <%= link_to "Edit", edit_admin_restaurant_path(restaurant) %>
+          <%= link_to "Delete", admin_restaurant_path(restaurant),
+              method: :delete,data:{confirm:"Are you sure"}%>
+        </th>
+
         <% end %>
 
       </tr>
@@ -27,3 +27,5 @@
 
 <p><%= link_to "New_restaurant", new_admin_restaurant_path %></p>
 <%= paginate @restaurants %>
+
+</div>
