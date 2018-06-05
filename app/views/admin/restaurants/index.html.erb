@@ -3,6 +3,7 @@
     <thead>
       <tr>
         <th>Restaurant ID</th>
+        <th>category</th>
         <th>Restaurant name</th>
         <th>More detail</th>
       </tr>
@@ -11,6 +12,7 @@
       <% @restaurants.each do |restaurant| %>
       <tr>
         <th><%= restaurant.id %></th>
+        <th><%=restaurant.category.name %></th>
         <th><%= restaurant.name %></th>
         <th><%= link_to "Show", admin_restaurant_path(restaurant) %>
           <%= link_to "Edit", edit_admin_restaurant_path(restaurant) %>

@@ -1,6 +1,9 @@
 
 <div class="panel panel-default container">
-  <div class="panel-heading"><h2><%= @restaurant.name %> <h3></div>
+  <div class="panel-heading">
+    <h2><%= @restaurant.name %> </h2>
+    <p><%= @restaurant.category.name %></p>
+  </div>
   <ul class="list-group">
     <li class="list-group-item">Opening Hours: <%= @restaurant.opening_hours %></li>
     <li class="list-group-item">Tel: <%= @restaurant.tel %></li>
