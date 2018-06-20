@@ -4,7 +4,16 @@
     <li role="presentation"><%= link_to 'Restaurant', admin_restaurants_path %></li>
     <li role="presentation"><%= link_to 'Categories', admin_categories_path %></li>
   </ul>
+  <div class="form-inline">
+    <%= form_for [:admin, @category] do |f| %>
+      <div class="form-group">
+        <%= f.text_field :name, placeholder: "Category Name",  class: "form-control" %>
+      </div>
+      <%= f.submit class: "btn btn-primary" %>
+    <%end%>
+  </div>
 </div>
+
 
 <div class="container">
   <table class = "table">
