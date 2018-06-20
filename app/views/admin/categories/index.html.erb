@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>Category list</h2>
+  <ul class="nav nav-pills">
+    <li role="presentation"><%= link_to 'Restaurant', admin_restaurants_path %></li>
+    <li role="presentation"><%= link_to 'Categories', admin_categories_path %></li>
+  </ul>
+</div>
+
+<div class="container">
+  <table class = "table">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>category name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @categories.each do |category| %>
+      <tr>
+        <th><%= category.id %></th>
+        <th><%= category.name %></th>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
