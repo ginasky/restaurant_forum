@@ -23,6 +23,7 @@
       <tr>
         <th>id</th>
         <th>category name</th>
+        <th>Edit</th>
       </tr>
     </thead>
     <tbody>
@@ -30,6 +31,7 @@
       <tr>
         <th><%= category.id %></th>
         <th><%= category.name %></th>
+        <th><%= link_to 'Edit', admin_categories_path(id: category.id) %></th>
       </tr>
       <% end %>
     </tbody>
