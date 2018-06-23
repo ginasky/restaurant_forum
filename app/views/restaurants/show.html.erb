@@ -1,0 +1,21 @@
+
+<div class="panel panel-default container">
+  <div class="panel-heading">
+    <h2><%= @restaurant.name %> </h2>
+    <p><%= @restaurant.category.name %></p>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item">Opening Hours: <%= @restaurant.opening_hours %></li>
+    <li class="list-group-item">Tel: <%= @restaurant.tel %></li>
+    <li class="list-group-item">Address: <%= @restaurant.address %></li>
+    <li class="list-group-item">Description:<%= @restaurant.description %></li>
+    <br>
+    <%= image_tag @restaurant.image, width: '600px' %>
+
+    <br>
+    <%= link_to 'Back to index', restaurants_path %>
+
+  </div>
+
+
+</div>
