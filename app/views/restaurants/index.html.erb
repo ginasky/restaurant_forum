@@ -1,1 +1,19 @@
-<h1>restaurants</h1>
+<div class="container">
+  <% @restaurants.each do |restaurant| %>
+  <div class="col-md-4 col-xs-12">
+    <div class="restaurant-item">
+      <%= link_to restaurant_path(restaurant) do %>
+        <%= image_tag restaurant.image,class: "img-responsive center-block" %>
+      <% end %>
+      <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
+      <p><%= restaurant.category.name %></p>
+      <p><%= truncate(restaurant.description, length: 80) %></p>
+    </div>
+  </div>
+  <% end %>
+
+  <div class="text-center">
+    <%= paginate @restaurants %>
+  </div>
+
+</div>
