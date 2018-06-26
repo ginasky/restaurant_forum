@@ -8,5 +8,18 @@
 
 .restaurant-item img {
   max-height: 180px;
-  width: 100%;
+
+}
+
+.category-pills {
+  text-align: center;
+}
+
+.category-pills li{
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.nav-pills li{
+  float: none;
 }
