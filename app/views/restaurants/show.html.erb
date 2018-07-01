@@ -9,13 +9,21 @@
     <li class="list-group-item">Tel: <%= @restaurant.tel %></li>
     <li class="list-group-item">Address: <%= @restaurant.address %></li>
     <li class="list-group-item">Description:<%= @restaurant.description %></li>
-    <br>
-    <%= image_tag @restaurant.image, width: '600px' %>
+  </ul>
+  <br>
+  <%= image_tag @restaurant.image, width: '600px' %>
 
-    <br>
-    <%= link_to 'Back to index', restaurants_path %>
-
-  </div>
-
+  <br>
+  <br>
+  <%= form_for [@restaurant, @comment]  do |f| %>
+    <div class="form-group">
+      <%= f.text_area :content, placeholder: "gives comments", class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit class: "btn btn-primary" %>
+      <%= f.button "cancle", type: :reset, class: "btn btn-default" %>
+    </div>
+    <% end %>
+  <%= link_to 'Back to index', restaurants_path %>
 
 </div>
